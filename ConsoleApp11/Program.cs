@@ -62,7 +62,7 @@ namespace SimpleProject
             cd p = new cd("Kobzon","Don","USSR","Kremlin",100.20,1990);
         
             XmlSerializer xmlFormat =new XmlSerializer(typeof(cd));
-            XmlSerializer xmlFormatcd = new XmlSerializer(typeof(cd));
+           
             try
             {
                 using (Stream fStream =File.Create("test.xml"))
@@ -74,7 +74,7 @@ namespace SimpleProject
                 cd p2= null;
                 using (Stream fStream =File.OpenRead("test.xml"))
                 {
-                    p2 = (cd)xmlFormatcd.
+                    p2 = (cd)xmlFormat.
                     Deserialize(fStream);
                 }
                 WriteLine(p2);
